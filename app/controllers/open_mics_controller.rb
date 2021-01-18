@@ -1,0 +1,2 @@
+class OpenMicsController < ApplicationController
+end

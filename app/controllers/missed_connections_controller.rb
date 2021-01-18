@@ -1,0 +1,2 @@
+class MissedConnectionsController < ApplicationController
+end

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  open_mic_id: 1
+  missed_connection_id: 1
+  support_id: 1
+  boody: MyText
+
+two:
+  user_id: 1
+  open_mic_id: 1
+  missed_connection_id: 1
+  support_id: 1
+  boody: MyText

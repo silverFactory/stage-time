@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  genre: MyString
+  location: MyString
+  day: MyString
+  time: MyString
+  stage_time: MyString
+  siggn_up_protocol: MyString
+  cover: 1
+  drink_or_food_minimum: MyString
+
+two:
+  name: MyString
+  genre: MyString
+  location: MyString
+  day: MyString
+  time: MyString
+  stage_time: MyString
+  siggn_up_protocol: MyString
+  cover: 1
+  drink_or_food_minimum: MyString

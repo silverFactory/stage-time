@@ -1,0 +1,2 @@
+class MissedConnection < ApplicationRecord
+end
