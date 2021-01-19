@@ -1,11 +1,17 @@
 class OpenMicsController < ApplicationController
   def new
+    @open_mic = OpenMic.new
   end
   def create
+    @open_mic = OpenMic.new(open_mic_params)
+    #need to add host to mic association
+    @open_mic.save
+    redirect_to open_mic_path(@open_mic)
   end
   def index
   end
   def show
+    @open_mic = OpenMic.find(params[:id])
   end
   def edit
   end
