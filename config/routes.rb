@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :open_mics
+  resources :open_mics do
+      resources :supports
+  end
   resources :instruments
   resources :updates
-  resources :supports
   resources :comments
   resources :missed_connections
   resources :users
