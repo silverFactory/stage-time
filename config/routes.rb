@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   resources :open_mics do
       resources :supports
+      resources :instruments
   end
-  resources :instruments
+
   resources :updates
   resources :comments
   resources :users
