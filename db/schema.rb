@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_18_191729) do
+ActiveRecord::Schema.define(version: 2021_01_19_205159) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -27,15 +27,6 @@ ActiveRecord::Schema.define(version: 2021_01_18_191729) do
     t.string "type"
     t.text "description"
     t.string "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "missed_connections", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "open_mic_id"
-    t.string "title"
-    t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -61,6 +52,8 @@ ActiveRecord::Schema.define(version: 2021_01_18_191729) do
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "missed_connection"
+    t.boolean "lend_a_hand"
   end
 
   create_table "updates", force: :cascade do |t|
