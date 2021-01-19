@@ -1,1 +1,24 @@
+
 <h1><%= @user.stage_name %></h1>
+<!-- add a link to a default image if user hasn't provided a pic -->
+<%= @user.pic %><br>
+
+<%= @user.bio %><br>
+<% if @user.email_public == true %>
+  <%= @user.email %><br>
+<% end %>
+<% if @user.facebook_link != nil %>
+<%= @user.facebook_link %><br>
+<% end %>
+<% if @user.instagram_link != nil %>
+<%= @user.instagram_link %><br>
+<% end %>
+<% if @user.youtube_link != nil %>
+<%= @user.youtube_link %><br>
+<% end %>
+<% if @user.bandcamp_link != nil %>
+<%= @user.bandcamp_link %><br>
+<% end %>
+<% if @user.spotify_link != nil %>
+<%= @user.spotify_link %><br>
+<% end %>
