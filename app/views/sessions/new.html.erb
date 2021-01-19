@@ -1,0 +1,12 @@
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+<%= label_tag :username %>
+<%= text_field_tag :username %>
+<%= label_tag :password, "Your password: " %>
+<%= password_field_tag :password %>
+<%= submit_tag "Sign In" %>
+<% end %>
