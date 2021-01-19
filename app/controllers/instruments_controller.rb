@@ -9,6 +9,7 @@ class InstrumentsController < ApplicationController
     redirect_to open_mic_instrument_path(params[:open_mic_id], @instrument)
   end
   def show
+    @instrument = Instrument.find(params[:id])
   end
   def edit
   end
@@ -20,6 +21,6 @@ class InstrumentsController < ApplicationController
   private
 
   def instrument_params
-    params.require(:instrument).permit(:open_mic_id, :type, :description, :status)
+    params.require(:instrument).permit(:open_mic_id, :name, :description, :status)
   end
 end
