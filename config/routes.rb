@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :instruments
   resources :updates
   resources :comments
-  resources :missed_connections
   resources :users
   root 'sessions#index'
   get '/signin' => 'sessions#new'
