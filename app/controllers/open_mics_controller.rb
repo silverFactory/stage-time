@@ -14,8 +14,12 @@ class OpenMicsController < ApplicationController
     @open_mic = OpenMic.find(params[:id])
   end
   def edit
+    @open_mic = OpenMic.find(params[:id])
   end
   def update
+    @open_mic = OpenMic.find(params[:id])
+    @open_mic.update(open_mic_params)
+    redirect_to open_mic_path(@open_mic)
   end
   def destroy
   end
