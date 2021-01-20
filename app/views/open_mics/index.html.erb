@@ -1,0 +1,8 @@
+<%# need to add drop down menu so user can search by city %>
+<% @open_mics.each do |mic| %>
+<%= link_to mic.name, open_mic_path(mic) %><br>
+<%= mic.genre %><br>
+<%= mic.location %><br>
+<%= mic.day %><br>
+<%= mic.time %><br>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_19_210432) do
+ActiveRecord::Schema.define(version: 2021_01_20_162426) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -18,6 +18,13 @@ ActiveRecord::Schema.define(version: 2021_01_19_210432) do
     t.integer "missed_connection_id"
     t.integer "support_id"
     t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "hosts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "open_mic_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

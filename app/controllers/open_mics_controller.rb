@@ -9,6 +9,7 @@ class OpenMicsController < ApplicationController
     redirect_to open_mic_path(@open_mic)
   end
   def index
+    @open_mics = OpenMic.all
   end
   def show
     @open_mic = OpenMic.find(params[:id])
