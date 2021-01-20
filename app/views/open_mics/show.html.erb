@@ -22,3 +22,8 @@
 <%= @open_mic.cover %><br>
 
 <%= @open_mic.drink_or_food_minimum %><br>
+
+<h2>Missed Connections</h2>
+<h3><%= link_to "Reach Out:", "/open_mics/#{@open_mic.id}/missed_connections/new" %></h3>
+<h2>Lend A Hand</h2>
+<h3><%= link_to "Help Me Out This Week:", "/open_mics/#{@open_mic.id}/lend_a_hands/new" %></h3>

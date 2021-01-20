@@ -2,6 +2,18 @@ class SupportsController < ApplicationController
   def new
     @support = Support.new
   end
+  def new_missed_connection
+    @support = Support.new
+    @missed_connection = true
+    @lend_a_hand = false
+    render "new"
+  end
+  def new_lend_a_hand
+    @support = Support.new
+    @lend_a_hand = true
+    @missed_connection = false
+    render "new"
+  end
   def create
     @support = Support.new(support_params)
     @support.user_id = session[:user_id]
@@ -22,6 +34,6 @@ class SupportsController < ApplicationController
   private
 
   def support_params
-    params.require(:support).permit(:user_id, :open_mic_id, :title, :body)
+    params.require(:support).permit(:user_id, :open_mic_id, :title, :body, :missed_connection, :lend_a_hand)
   end
 end

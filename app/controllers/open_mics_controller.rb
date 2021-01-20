@@ -21,6 +21,7 @@ class OpenMicsController < ApplicationController
     @open_mic.hosts.each do |host|
       @hosts << User.find(host.id).stage_name
     end
+    @missed_connection = Support.new
   end
   def edit
     @open_mic = OpenMic.find(params[:id])

@@ -1,7 +1,9 @@
-<%= form_with model: [:open_mic, @support] do |f| %>
+<%= form_with model: [:open_mic, support] do |f| %>
 <%= f.label :title %>
 <%= f.text_field :title %><br>
 <%= f.label :body %>
 <%= f.text_area :body %><br>
+<%= f.hidden_field :missed_connection, :value => missed_connection %>
+<%= f.hidden_field :lend_a_hand, :value => lend_a_hand %>
 <%= f.submit %>
 <% end %>
