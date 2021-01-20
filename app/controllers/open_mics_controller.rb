@@ -13,6 +13,7 @@ class OpenMicsController < ApplicationController
   end
   def show
     @open_mic = OpenMic.find(params[:id])
+    @update = @open_mic.updates.last
   end
   def edit
     @open_mic = OpenMic.find(params[:id])
