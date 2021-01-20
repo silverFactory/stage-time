@@ -4,6 +4,12 @@
 <%= @user.pic %><br>
 
 <%= @user.bio %><br>
+
+<% if @user.host == true %>
+<%= link_to "Make a Mic", new_open_mic_path %>
+<% end %>
+
+<%# TOO MUCH LOGIC IN VIEW, ABSTRACT TO AN ARRAY IN THE CONTROLLER %>
 <% if @user.email_public == true %>
   <%= @user.email %><br>
 <% end %>

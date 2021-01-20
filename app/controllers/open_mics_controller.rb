@@ -4,8 +4,11 @@ class OpenMicsController < ApplicationController
   end
   def create
     @open_mic = OpenMic.new(open_mic_params)
-    #need to add host to mic association
     @open_mic.save
+    #add host to mic association
+    @host = Host.create(user_id: session[:user_id], open_mic_id: @open_mic.id)
+  #  byebug
+
     redirect_to open_mic_path(@open_mic)
   end
   def index
@@ -14,6 +17,10 @@ class OpenMicsController < ApplicationController
   def show
     @open_mic = OpenMic.find(params[:id])
     @update = @open_mic.updates.last
+    @hosts = []
+    @open_mic.hosts.each do |host|
+      @hosts << User.find(host.id).stage_name
+    end
   end
   def edit
     @open_mic = OpenMic.find(params[:id])

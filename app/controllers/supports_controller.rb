@@ -6,7 +6,6 @@ class SupportsController < ApplicationController
     @support = Support.new(support_params)
     @support.user_id = session[:user_id]
     @support.open_mic_id = params[:open_mic_id]
-    #byebug
     @support.save
     redirect_to open_mic_support_path(params[:open_mic_id], @support)
   end

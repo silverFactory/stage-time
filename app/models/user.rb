@@ -4,11 +4,11 @@ class User < ApplicationRecord
   validates :password, confirmation: { case_sensitive: true }
 
   has_many :comments
-  has_many :missed_connections
+  has_many :hosts
   has_many :supports
   has_many :updates
-  has_many :open_mics, through: :missed_connections
-  has_many :open_mics, through: :supports
-  has_many :open_mics, through: :updates
+  has_many :open_mics, through: :hosts
+  #has_many :open_mics, through: :supports
+#  has_many :open_mics, through: :updates
 
 end

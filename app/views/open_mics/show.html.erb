@@ -1,6 +1,11 @@
+<h1><%= @open_mic.name %><br></h1>
 
+<h2>Hosted by: <% @hosts.each do |host| %>
+  <%= host %>
+<% end %> <h2>
+<% if @update != nil %>
 <h3>This Week: <%= @update.body %></h3>
-<%= @open_mic.name %><br>
+<% end %>
 
 <%= @open_mic.genre %><br>
 
