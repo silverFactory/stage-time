@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   resources :open_mics do
       resources :supports
       resources :instruments
+      resources :updates
   end
 
-  resources :updates
+
   resources :comments
   resources :users
   root 'sessions#index'
