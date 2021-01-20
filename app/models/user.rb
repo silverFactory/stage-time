@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :supports
   has_many :updates
   has_many :open_mics, through: :hosts
-  #has_many :open_mics, through: :supports
-#  has_many :open_mics, through: :updates
+  has_many :open_mics, through: :supports
+  has_many :open_mics, through: :updates
 
 end
