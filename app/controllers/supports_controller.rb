@@ -23,6 +23,9 @@ class SupportsController < ApplicationController
   end
   def show
     @support = Support.find(params[:id])
+    #grab all comments for this post
+    #empty comment object for the new/form
+    @comment = Comment.new
   end
   def edit
   end

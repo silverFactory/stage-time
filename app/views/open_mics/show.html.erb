@@ -6,22 +6,20 @@
 <% if @update != nil %>
 <h3>This Week: <%= @update.body %></h3>
 <% end %>
-
-<%= @open_mic.genre %><br>
-
-<%= @open_mic.location %><br>
-
-<%= @open_mic.day %><br>
-
-<%= @open_mic.time %><br>
-
-<%= @open_mic.stage_time %><br>
-
-<%= @open_mic.sign_up_protocol %><br>
-
-<%= @open_mic.cover %><br>
-
-<%= @open_mic.drink_or_food_minimum %><br>
+<p>Genre: <%= @open_mic.genre %></p>
+<p>Location: <%= @open_mic.location %></p>
+<p>Day: <%= @open_mic.day %></p>
+<p>Start Time: <%= @open_mic.time %></p>
+<p>Stage Time: <%= @open_mic.stage_time %></p>
+<p>Sign Up Protocol: <%= @open_mic.sign_up_protocol %></p>
+<p>Cover: <%= @open_mic.cover %></p>
+<p>Drink or Food Minimum: <%= @open_mic.drink_or_food_minimum %></p>
+<p>Instruments available for use: </p>
+<% @open_mic.instruments.each do |inst| %>
+<p>Name: <%= inst.name %>
+<p>Description: <%= inst.description %>
+<p>Status: <%= inst.status %>
+<% end %>
 
 <h3><%= link_to "Reach Out:", "/open_mics/#{@open_mic.id}/missed_connections/new" %></h3>
 <h2>Missed Connections:</h2>
