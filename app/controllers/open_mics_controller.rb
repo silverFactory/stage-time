@@ -21,7 +21,18 @@ class OpenMicsController < ApplicationController
     @open_mic.hosts.each do |host|
       @hosts << User.find(host.id).stage_name
     end
-    @missed_connection = Support.new
+    @missed_connections = []
+    @open_mic.supports.each do |support|
+      if support.missed_connection == true
+        @missed_connections << support
+      end
+    end
+    @lend_a_hands = []
+    @open_mic.supports.each do |support|
+      if support.lend_a_hand == true
+        @lend_a_hands << support
+      end
+    end
   end
   def edit
     @open_mic = OpenMic.find(params[:id])

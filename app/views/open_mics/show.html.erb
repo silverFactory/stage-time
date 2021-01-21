@@ -23,7 +23,14 @@
 
 <%= @open_mic.drink_or_food_minimum %><br>
 
-<h2>Missed Connections</h2>
 <h3><%= link_to "Reach Out:", "/open_mics/#{@open_mic.id}/missed_connections/new" %></h3>
-<h2>Lend A Hand</h2>
+<h2>Missed Connections:</h2>
+<% @missed_connections.each do |con| %>
+<%= link_to con.title, open_mic_support_path(@open_mic, con) %>
+<% end %>
+
 <h3><%= link_to "Help Me Out This Week:", "/open_mics/#{@open_mic.id}/lend_a_hands/new" %></h3>
+<h2>Lend A Hand</h2>
+<% @lend_a_hands.each do |hand| %>
+<%= link_to hand.title, open_mic_support_path(@open_mic, hand) %>
+<% end %>
