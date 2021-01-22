@@ -2,6 +2,8 @@ class CommentsController < ApplicationController
   def new
   end
   def create
+    @comment = Comment.new(comment_params)
+    byebug
   end
   def edit
   end
@@ -12,7 +14,7 @@ class CommentsController < ApplicationController
 
   private
 
-  def missed_connection_params
-    params.require(:comment).permit(:user_id, :open_mic_id, :missed_connection_id, :support_id, :body)
+  def comment_params
+    params.require(:comment).permit(:user_id, :support_id, :body)
   end
 end

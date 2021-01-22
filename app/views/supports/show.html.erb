@@ -1,2 +1,12 @@
 <h1><%= @support.title %></h1>
 <%= @support.body %>
+<%# form to create a new comment that routes to comments#create %>
+<%= form_with model: @comment do |f| %>
+<%= f.label :body %>
+<%= f.text_area :body %>
+<%= f.hidden_field :user_id, :value => @support.user_id %>
+<%= f.hidden_field :support_id, :value => @support.id %>
+<%= f.submit %>
+<% end %>
+
+<%# load all existing comments for this support post %>
