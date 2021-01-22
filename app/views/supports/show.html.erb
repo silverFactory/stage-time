@@ -1,6 +1,5 @@
 <h1><%= @support.title %></h1>
 <%= @support.body %>
-<%# form to create a new comment that routes to comments#create %>
 <%= form_with model: @comment do |f| %>
 <%= f.label :body %>
 <%= f.text_area :body %>
@@ -10,3 +9,6 @@
 <% end %>
 
 <%# load all existing comments for this support post %>
+<% @support.comments.each do |com| %>
+<p><%= com.user.stage_name %>: <%= com.body %></p>
+<% end %>

@@ -2,8 +2,8 @@ class CommentsController < ApplicationController
   def new
   end
   def create
-    @comment = Comment.new(comment_params)
-    byebug
+    @comment = Comment.create(comment_params)
+    redirect_to open_mic_support_path(@comment.support.open_mic_id, @comment.support_id)
   end
   def edit
   end
