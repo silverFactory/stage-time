@@ -4,14 +4,25 @@
 <div style="  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);color: #F2F2F0; font-size: 60px;"><%= @open_mic.name %></div>
+  transform: translate(-50%, -50%);background-color: red;background-image: linear-gradient(70deg, #469F77, #BACF92);background-size: 100%;
+  background-repeat: repeat;-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  font-size: 60px; font-family: modak;text-shadow: 2px 2px 0px rgba(0,0,0,0.1);"><%= @open_mic.name %></div>
 </div>
+<% if @update != nil %>
+<div style="width: auto; border: 15px solid green; padding: 50px; display: flex;align-items: center; justify-content: center">
+<img src="https://findicons.com/files/icons/986/aeon/256/alert.png" alt="alert icon" style="width: 50px; height: 50px;">
+<span style="margin: 0; font-size: 40px;"><%= @update.body %></span>
+<img src="https://findicons.com/files/icons/986/aeon/256/alert.png" alt="alert icon" style="width: 50px; height: 50px; position: relative; right: 0px;
+    top: 0px; ">
+</div>
+<% end %>
 <h2>Hosted by: <% @hosts.each do |host| %>
   <%= host %>
 <% end %> <h2>
-<% if @update != nil %>
-<h3>This Week: <%= @update.body %></h3>
-<% end %>
+
 <p>Genre: <%= @open_mic.genre %></p>
 <p>Location: <%= @open_mic.location %></p>
 <p>Day: <%= @open_mic.day %></p>
