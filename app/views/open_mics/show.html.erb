@@ -1,4 +1,4 @@
-
+<div style="margin-left:10%;padding:1px 16px;height:1000px;">
 <h1><%= @open_mic.name %><br></h1>
 
 <h2>Hosted by: <% @hosts.each do |host| %>
@@ -33,3 +33,4 @@
 <% @lend_a_hands.each do |hand| %>
 <%= link_to hand.title, open_mic_support_path(@open_mic, hand) %>
 <% end %>
+</div>
