@@ -12,16 +12,33 @@
   font-size: 60px; font-family: modak;text-shadow: 2px 2px 0px rgba(0,0,0,0.1);"><%= @open_mic.name %></div>
 </div>
 <% if @update != nil %>
-<div style="width: auto; border: 15px solid green; padding: 50px; display: flex;align-items: center; justify-content: center">
+<div style="width: auto; border: 10px solid green; padding: 30px; display: flex;align-items: center; justify-content: center">
 <img src="https://findicons.com/files/icons/986/aeon/256/alert.png" alt="alert icon" style="width: 50px; height: 50px;">
-<span style="margin: 0; font-size: 40px;"><%= @update.body %></span>
-<img src="https://findicons.com/files/icons/986/aeon/256/alert.png" alt="alert icon" style="width: 50px; height: 50px; position: relative; right: 0px;
-    top: 0px; ">
+<span style="margin: 0; font-size: 30px;"><%= @update.body %></span>
+<img src="https://findicons.com/files/icons/986/aeon/256/alert.png" alt="alert icon" style="width: 50px; height: 50px; position: relative; right: 0px;top: 0px;">
 </div>
 <% end %>
-<h2>Hosted by: <% @hosts.each do |host| %>
+<div style="display: flex;">
+  <div style="">
+  <p><%= link_to "Reach Out:", "/open_mics/#{@open_mic.id}/missed_connections/new" %></p>
+  <p>Missed Connections:</p>
+  <% @missed_connections.each do |con| %>
+  <p><%= link_to con.title, open_mic_support_path(@open_mic, con) %></p>
+  <% end %>
+  </div>
+  <img src="https://c.stocksy.com/a/IBQ200/z9/577300.jpg" alt="microphone on stand" style="width: 800px; height: 500px; flex-grow: 2;">
+  <div style="">
+  <p><%= link_to "Help Me Out This Week:", "/open_mics/#{@open_mic.id}/lend_a_hands/new" %></p>
+  <p>Lend A Hand:</p>
+  <% @lend_a_hands.each do |hand| %>
+  <p><%= link_to hand.title, open_mic_support_path(@open_mic, hand) %></p>
+  <% end %>
+  </div>
+</div>
+
+<h2 style="">Hosted by: <% @hosts.each do |host| %>
   <%= host %>
-<% end %> <h2>
+<% end %> </h2>
 
 <p>Genre: <%= @open_mic.genre %></p>
 <p>Location: <%= @open_mic.location %></p>
@@ -36,17 +53,5 @@
 <p>Name: <%= inst.name %>
 <p>Description: <%= inst.description %>
 <p>Status: <%= inst.status %>
-<% end %>
-
-<h3><%= link_to "Reach Out:", "/open_mics/#{@open_mic.id}/missed_connections/new" %></h3>
-<h2>Missed Connections:</h2>
-<% @missed_connections.each do |con| %>
-<%= link_to con.title, open_mic_support_path(@open_mic, con) %>
-<% end %>
-
-<h3><%= link_to "Help Me Out This Week:", "/open_mics/#{@open_mic.id}/lend_a_hands/new" %></h3>
-<h2>Lend A Hand</h2>
-<% @lend_a_hands.each do |hand| %>
-<%= link_to hand.title, open_mic_support_path(@open_mic, hand) %>
 <% end %>
 </div>
