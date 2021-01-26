@@ -1,4 +1,4 @@
-<div style="margin-left:10%;padding:1px 16px;height:1000px;">
+<div style="margin-left:10%;padding:1px 16px;height:auto;background-color: #515D64;color:#C1D4AB;">
 <div style="text-align: center; position: relative; height: 350px;">
 <img src="https://themusicbureau.com/wp-content/uploads/2018/03/background-2011744_1920.jpg" alt="stage" style="width:100%; height: 100%;">
 <div style="  position: absolute;
@@ -12,14 +12,14 @@
   font-size: 60px; font-family: modak;text-shadow: 2px 2px 0px rgba(0,0,0,0.1);"><%= @open_mic.name %></div>
 </div>
 <% if @update != nil %>
-<div style="width: auto; border: 10px solid green; padding: 30px; display: flex;align-items: center; justify-content: center">
+<div style="width: auto; border: 3px solid black; padding: 30px; display: flex;align-items: center; justify-content: center">
 <img src="https://findicons.com/files/icons/986/aeon/256/alert.png" alt="alert icon" style="width: 50px; height: 50px;">
 <span style="margin: 0; font-size: 30px;"><%= @update.body %></span>
 <img src="https://findicons.com/files/icons/986/aeon/256/alert.png" alt="alert icon" style="width: 50px; height: 50px; position: relative; right: 0px;top: 0px;">
 </div>
 <% end %>
 <div style="display: flex; height: 250px; width: 100%; justify-content: center;">
-  <div style="flex-grow: 1;flex-shrink: 1;flex-basis: auto; padding: 5px; min-height: 0;overflow: scroll;">
+  <div style="flex-grow: 1;flex-shrink: 1;flex-basis: auto; padding: 5px; min-height: 0;overflow: auto;">
   <p><%= link_to "Reach Out:", "/open_mics/#{@open_mic.id}/missed_connections/new" %></p>
   <p>Missed Connections:</p>
   <% @missed_connections.each do |con| %>
@@ -34,7 +34,7 @@
   <p>more posts</p>
   </div>
   <img src="https://c.stocksy.com/a/IBQ200/z9/577300.jpg" alt="microphone on stand" style="min-width: 0;flex-grow: 1;flex-shrink: 3;flex-basis: 50%;">
-  <div style="flex-grow: 1;flex-shrink: 1;flex-basis: auto; padding: 5px; min-height: 0; overflow: scroll;">
+  <div style="flex-grow: 1;flex-shrink: 1;flex-basis: auto; padding: 5px; min-height: 0; overflow: auto;">
   <p><%= link_to "Help Me Out This Week:", "/open_mics/#{@open_mic.id}/lend_a_hands/new" %></p>
   <p>Lend A Hand:</p>
   <% @lend_a_hands.each do |hand| %>
@@ -49,23 +49,24 @@
   <p>more posts</p>
   </div>
 </div>
+  <div style="text-align: center;margin: 1px;height:auto;border: 2px solid black;">
+    <h2 style="">Hosted by: <% @hosts.each do |host| %>
+      <%= host %>
+    <% end %> </h2>
 
-<h2 style="">Hosted by: <% @hosts.each do |host| %>
-  <%= host %>
-<% end %> </h2>
-
-<p>Genre: <%= @open_mic.genre %></p>
-<p>Location: <%= @open_mic.location %></p>
-<p>Day: <%= @open_mic.day %></p>
-<p>Start Time: <%= @open_mic.time %></p>
-<p>Stage Time: <%= @open_mic.stage_time %></p>
-<p>Sign Up Protocol: <%= @open_mic.sign_up_protocol %></p>
-<p>Cover: <%= @open_mic.cover %></p>
-<p>Drink or Food Minimum: <%= @open_mic.drink_or_food_minimum %></p>
-<p>Instruments available for use: </p>
-<% @open_mic.instruments.each do |inst| %>
-<p>Name: <%= inst.name %>
-<p>Description: <%= inst.description %>
-<p>Status: <%= inst.status %>
-<% end %>
+    <p>Genre: <%= @open_mic.genre %></p>
+    <p>Location: <%= @open_mic.location %></p>
+    <p>Day: <%= @open_mic.day %></p>
+    <p>Start Time: <%= @open_mic.time %></p>
+    <p>Stage Time: <%= @open_mic.stage_time %></p>
+    <p>Sign Up Protocol: <%= @open_mic.sign_up_protocol %></p>
+    <p>Cover: <%= @open_mic.cover %></p>
+    <p>Drink or Food Minimum: <%= @open_mic.drink_or_food_minimum %></p>
+    <p>Instruments available for use: </p>
+    <% @open_mic.instruments.each do |inst| %>
+    <p>Name: <%= inst.name %></p>
+    <p>Description: <%= inst.description %></p>
+    <p>Status: <%= inst.status %></p>
+    <% end %>
+  </div>
 </div>
