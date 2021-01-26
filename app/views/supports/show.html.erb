@@ -1,14 +1,20 @@
-<h1><%= @support.title %></h1>
-<%= @support.body %>
-<%= form_with model: @comment do |f| %>
-<%= f.label :body %>
-<%= f.text_area :body %>
-<%= f.hidden_field :user_id, :value => @support.user_id %>
-<%= f.hidden_field :support_id, :value => @support.id %>
-<%= f.submit %>
-<% end %>
-
-<%# load all existing comments for this support post %>
-<% @support.comments.each do |com| %>
-<p><%= com.user.stage_name %>: <%= com.body %></p>
-<% end %>
+<div style="margin-left:10%;padding:1px 16px;height:100vh;background-color: #3B6075;color:#C1D4AB;text-align: center;">
+<h1 style=""><%= @support.title %></h1>
+<p><%= link_to @support.user.stage_name, user_path(@support.user) %> says: <%= @support.body %></p>
+  <div style="display: flex; justify-content:center;align-items:flex-start;" >
+    <div style="flex:1;">
+    <%# load all existing comments for this support post %>
+    <% @support.comments.each do |com| %>
+    <p><%= link_to com.user.stage_name, user_path(com.user) %>: <%= com.body %></p>
+    <% end %>
+    </div>
+    <div style="flex:1;">
+    <%= form_with model: @comment do |f| %>
+    <%= f.text_area :body, placeholder: "say something...", size: "30x10" %><br>
+    <%= f.hidden_field :user_id, :value => @support.user_id %>
+    <%= f.hidden_field :support_id, :value => @support.id %>
+    <%= f.submit %>
+    <% end %>
+    </div>
+  </div>
+</div>

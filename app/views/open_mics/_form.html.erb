@@ -1,21 +1,45 @@
-<%= form_for @open_mic do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %><br>
-<%= f.label :genre %>
-<%= f.text_field :genre %><br>
-<%= f.label :location %>
-<%= f.text_field :location %><br>
-<%= f.label :day %>
-<%= f.text_field :day %><br>
-<%= f.label :time %>
-<%= f.text_field :time %><br>
-<%= f.label :stage_time %>
-<%= f.text_field :stage_time %><br>
-<%= f.label :sign_up_protocol %>
-<%= f.text_field :sign_up_protocol %><br>
-<%= f.label :cover %>
-<%= f.number_field :cover %><br>
-<%= f.label :drink_or_food_minimum %>
-<%= f.text_field :drink_or_food_minimum %><br>
-<%= f.submit %>
-<% end %>
+<div style="margin-left:10%;padding:1px 16px;height:100vh;background-color: #3B6075;color:#C1D4AB;">
+  <div style="margin-left: auto;margin-right: auto;width: 50%;">
+    <%= form_for @open_mic do |f| %>
+<div style="display: flex;flex-direction:row;justify-content:flex-end;text-align:right;width:400px;line-height:26px; margin-bottom: 5px;">
+    <p style="flex: 0 0 200px;"><%= f.label :name %></p>
+    <p style="flex: 0 0 200px;"><%= f.text_field :name %></p>
+</div>
+<div style="display: flex;flex-direction:row;justify-content:flex-end;text-align:right;width:400px;line-height:26px; margin-bottom: 5px;">
+    <p style="flex: 0 0 200px;"><%= f.label :genre %></p>
+    <p style="flex: 0 0 200px;"><%= f.text_field :genre %></p>
+</div>
+<div style="display: flex;flex-direction:row;justify-content:flex-end;text-align:right;width:400px;line-height:26px; margin-bottom: 5px;">
+    <p style="flex: 0 0 200px;"><%= f.label :location %></p>
+    <p style="flex: 0 0 200px;"><%= f.text_field :location %></p>
+</div>
+<div style="display: flex;flex-direction:row;justify-content:flex-end;text-align:right;width:400px;line-height:26px; margin-bottom: 5px;">
+    <p style="flex: 0 0 200px;"><%= f.label :day %></p>
+    <p style="flex: 0 0 200px;"><%= f.text_field :day %></p>
+</div>
+<div style="display: flex;flex-direction:row;justify-content:flex-end;text-align:right;width:400px;line-height:26px; margin-bottom: 5px;">
+    <p style="flex: 0 0 200px;"><%= f.label :time %></p>
+    <p style="flex: 0 0 200px;"><%= f.text_field :time %></p>
+</div>
+<div style="display: flex;flex-direction:row;justify-content:flex-end;text-align:right;width:400px;line-height:26px; margin-bottom: 5px;">
+    <p style="flex: 0 0 200px;"><%= f.label :stage_time %></p>
+    <p style="flex: 0 0 200px;"><%= f.text_field :stage_time %></p>
+</div>
+<div style="display: flex;flex-direction:row;justify-content:flex-end;text-align:right;width:400px;line-height:26px; margin-bottom: 5px;">
+    <p style="flex: 0 0 200px;"><%= f.label :sign_up_protocol %></p>
+    <p style="flex: 0 0 200px;"><%= f.text_field :sign_up_protocol %></p>
+</div>
+<div style="display: flex;flex-direction:row;justify-content:flex-end;text-align:right;width:400px;line-height:26px; margin-bottom: 5px;">
+    <p style="flex: 0 0 200px;"><%= f.label :cover %></p>
+    <p style="flex: 0 0 200px;"><%= f.number_field :cover %></p>
+</div>
+<div style="display: flex;flex-direction:row;justify-content:flex-end;text-align:right;width:400px;line-height:26px; margin-bottom: 5px;">
+    <p style="flex: 0 0 200px;"><%= f.label :drink_or_food_minimum %></p>
+    <p style="flex: 0 0 200px;"><%= f.text_field :drink_or_food_minimum %></p>
+</div>
+<div style="margin-left: auto;margin-right: auto; width: 8em">
+    <%= f.submit %>
+</div>
+    <% end %>
+  </div>
+</div>
