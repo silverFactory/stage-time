@@ -18,21 +18,35 @@
 <img src="https://findicons.com/files/icons/986/aeon/256/alert.png" alt="alert icon" style="width: 50px; height: 50px; position: relative; right: 0px;top: 0px;">
 </div>
 <% end %>
-<div style="display: flex; height: 400px; width: 100%;">
-  <div style="flex-grow: 1;flex-shrink: 1;flex-basis: auto;">
+<div style="display: flex; height: 250px; width: 100%; justify-content: center;">
+  <div style="flex-grow: 1;flex-shrink: 1;flex-basis: auto; padding: 5px; min-height: 0;overflow: scroll;">
   <p><%= link_to "Reach Out:", "/open_mics/#{@open_mic.id}/missed_connections/new" %></p>
   <p>Missed Connections:</p>
   <% @missed_connections.each do |con| %>
   <p><%= link_to con.title, open_mic_support_path(@open_mic, con) %></p>
   <% end %>
+  <p>more posts</p>
+  <p>more posts</p>
+  <p>more posts</p>
+  <p>more posts</p>
+  <p>more posts</p>
+  <p>more posts</p>
+  <p>more posts</p>
   </div>
   <img src="https://c.stocksy.com/a/IBQ200/z9/577300.jpg" alt="microphone on stand" style="min-width: 0;flex-grow: 1;flex-shrink: 3;flex-basis: 50%;">
-  <div style="flex-grow: 1;flex-shrink: 1;flex-basis: auto;">
+  <div style="flex-grow: 1;flex-shrink: 1;flex-basis: auto; padding: 5px; min-height: 0; overflow: scroll;">
   <p><%= link_to "Help Me Out This Week:", "/open_mics/#{@open_mic.id}/lend_a_hands/new" %></p>
   <p>Lend A Hand:</p>
   <% @lend_a_hands.each do |hand| %>
   <p><%= link_to hand.title, open_mic_support_path(@open_mic, hand) %></p>
   <% end %>
+  <p>more posts</p>
+  <p>more posts</p>
+  <p>more posts</p>
+  <p>more posts</p>
+  <p>more posts</p>
+  <p>more posts</p>
+  <p>more posts</p>
   </div>
 </div>
 
