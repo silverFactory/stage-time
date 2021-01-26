@@ -1,5 +1,6 @@
 class OpenMicsController < ApplicationController
   def new
+      #  raise params.inspect
     @open_mic = OpenMic.new
   end
   def create

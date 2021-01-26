@@ -1,12 +1,20 @@
+<div style="margin-left:10%;padding:1px 16px;height:100vh;background-color: #3B6075;color:#C1D4AB;">
 <% flash.each do |type, msg| %>
   <div>
     <%= msg %>
   </div>
 <% end %>
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-<%= label_tag :username %>
-<%= text_field_tag :username %>
-<%= label_tag :password, "Your password: " %>
-<%= password_field_tag :password %>
-<%= submit_tag "Sign In" %>
-<% end %>
+<div style="display: block; margin-top: 50px;">
+  <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+<div style="margin-left: auto;margin-right: auto; margin-top:30px; width: 40em">
+  <%= label_tag :username, "Username: " %>
+  <%= text_field_tag :username %>
+  <%= label_tag :password, "Your password: " %>
+  <%= password_field_tag :password %>
+</div>
+<div style="margin-left: auto;margin-right: auto; margin-top:30px; width: 8em">
+  <%= submit_tag "Sign In" %>
+</div>
+  <% end %>
+</div>
+</div>

@@ -1,8 +1,12 @@
+<div style="margin-left:10%;padding:1px 16px;height:100vh;background-color: #3B6075;color:#C1D4AB;">
 <%# need to add drop down menu so user can search by city %>
 <% @open_mics.each do |mic| %>
+<div style="border: 2px solid #C1D4AB;">
 <%= link_to mic.name, open_mic_path(mic) %><br>
 <%= mic.genre %><br>
 <%= mic.location %><br>
 <%= mic.day %><br>
 <%= mic.time %><br>
+</div>
 <% end %>
+</div>
