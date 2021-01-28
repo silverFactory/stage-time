@@ -1,20 +1,25 @@
-<div style="margin-left:10%;padding:1px 16px;height:100vh;background-color: #3B6075;color:#C1D4AB;">
+<div style="margin-left:15%;padding:16px 16px;height:auto;background-color: #3B6075;color:#C1D4AB;box-shadow: 0 0.3em 1em #000;">
+
 <% flash.each do |type, msg| %>
   <div>
     <%= msg %>
   </div>
 <% end %>
-<div style="display: block; margin-top: 50px;">
+<div style="margin-left: auto;margin-right: auto;width: 60%; text-align: center;">
+
   <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-<div style="margin-left: auto;margin-right: auto; margin-top:30px; width: 40em">
-  <%= label_tag :username, "Username: " %>
-  <%= text_field_tag :username %>
-  <%= label_tag :password, "Your password: " %>
-  <%= password_field_tag :password %>
+<div style="display: flex;flex-direction:row;justify-content:center;text-align:center;line-height:15px;">
+<p style="flex: 1 0 100px;">  <%= label_tag :username, "Username: " %></p>
+<p style="flex: 1 0 auto;">  <%= text_field_tag :username %></p>
+</div>
+  <div style="display: flex;flex-direction:row;justify-content:center;text-align:center;line-height:15px;">
+<p style="flex: 1 0 100px;">  <%= label_tag :password, "Password: "%></p>
+<p style="flex: 1 0 auto;">  <%= password_field_tag :password %></p>
 </div>
 <div style="margin-left: auto;margin-right: auto; margin-top:30px; width: 8em">
   <%= submit_tag "Sign In" %>
 </div>
   <% end %>
+</div>
 </div>
 </div>
