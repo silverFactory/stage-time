@@ -4,7 +4,7 @@
 <!-- add a link to a default image if user hasn't provided a pic -->
 <div><%= @user.pic %></div>
 
-<div><%= @user.bio %></div>
+<div style="line-height: 25px;"><%= @user.bio %></div>
 
 <% if @user.host == true && @user.id == @current_user %>
 <%= link_to "Make a Mic", new_open_mic_path %>
@@ -12,7 +12,7 @@
 
 <%# TOO MUCH LOGIC IN VIEW, ABSTRACT TO AN ARRAY IN THE CONTROLLER %>
 <% if @user.email_public == true %>
-  <%= @user.email %><br>
+<div style="line-height: 25px;"><%= @user.email %></div>
 <% end %>
 <% if @user.facebook_link != nil %>
 <%= @user.facebook_link %><br>

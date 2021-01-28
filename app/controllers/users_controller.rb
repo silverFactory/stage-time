@@ -18,6 +18,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
+    byebug
+    @user.save
     redirect_to user_path(@user)
   end
   def destroy
@@ -26,7 +28,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation, :stage_name, :host, :pic, :bio,
-       :email, :email_public, :facebook_link, :instagram_link, :youtube_link, :bandcamp_link, :spotify_link)
+    params.require(:user).permit(:username, :password, :password_confirmation, :stage_name, :host, :pic, :bio, :email, :email_public, :facebook_link, :instagram_link, :youtube_link, :bandcamp_link, :spotify_link)
   end
 end
