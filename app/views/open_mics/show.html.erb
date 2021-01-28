@@ -20,9 +20,8 @@
 </div>
 <% end %>
 <div style="display: flex; height: 250px; width: 100%; justify-content: center; margin-top:20px;">
-  <div style="flex-grow: 1;flex-shrink: 1;flex-basis: auto; padding: 10px; min-height: 0;overflow: auto;box-shadow: 0 0.3em 1em #000;background-color: #e0e8d8;color: black;margin-left:2px">
-  <p><%= link_to "Reach Out:", "/open_mics/#{@open_mic.id}/missed_connections/new" %></p>
-  <p>Missed Connections:</p>
+  <div style="flex-grow: 1;flex-shrink: 1;flex-basis: auto; padding: 10px; min-height: 0;max-width: 170px;overflow: auto;box-shadow: 0 0.3em 1em #000;background-color: #e0e8d8;color: black;margin-left:2px">
+  <p><%= link_to "Missed Connections:", "/open_mics/#{@open_mic.id}/missed_connections/new" %></p>
   <% @missed_connections.each do |con| %>
   <p><%= link_to con.title, open_mic_support_path(@open_mic, con) %></p>
   <% end %>
@@ -35,9 +34,8 @@
   <p>more posts</p>
   </div>
   <img src="https://c.stocksy.com/a/IBQ200/z9/577300.jpg" alt="microphone on stand" style="min-width: 0;flex-grow: 1;flex-shrink: 3;flex-basis: 50%;margin-left: 5px;margin-right:5px;box-shadow: 0 0.3em 1em #000;">
-  <div style="flex-grow: 1;flex-shrink: 1;flex-basis: auto; padding: 10px; min-height: 0; overflow: auto;box-shadow: 0 0.3em 1em #000;background-color: #e0e8d8;color: black;margin-right:2px">
+  <div style="flex-grow: 1;flex-shrink: 1;flex-basis: auto; padding: 10px; min-height: 0;max-width: 170px; overflow: auto;box-shadow: 0 0.3em 1em #000;background-color: #e0e8d8;color: black;margin-right:2px">
   <p><%= link_to "Help Me Out This Week:", "/open_mics/#{@open_mic.id}/lend_a_hands/new" %></p>
-  <p>Lend A Hand:</p>
   <% @lend_a_hands.each do |hand| %>
   <p><%= link_to hand.title, open_mic_support_path(@open_mic, hand) %></p>
   <% end %>
