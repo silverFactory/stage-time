@@ -1,13 +1,13 @@
-<div style="margin-left:10%;padding:1px 16px;height:100vh;background-color: #3B6075;color:#C1D4AB;">
+<!-- <div style="margin-left:10%;padding:1px 16px;height:100vh;background-color: #3B6075;color:#C1D4AB;"> -->
 <%# need to add drop down menu so user can search by city %>
-<div style="width: auto; border: 3px solid black; padding: 30px; display: flex;flex-direction:column;align-items: flex-start; justify-content: left;box-shadow: 0 0.3em 1em #000;margin-top: 20px;">
+<div style="margin-left:15%;padding:16px 16px;height:auto;background-color: #3B6075;color:#C1D4AB;box-shadow: 0 0.3em 1em #000;">
 <% @open_mics.each do |mic| %>
-<div style="border: 2px solid #C1D4AB;width:100%;">
+<div style="border-bottom: 2px solid #C1D4AB;width:100%;margin-bottom: 5px;padding-bottom: 5px;">
 <%= link_to mic.name, open_mic_path(mic) %><br>
-<%= mic.genre %><br>
-<%= mic.location %><br>
-<%= mic.day %><br>
-<%= mic.time %><br>
+Genre: <%= mic.genre %><br>
+Location: <%= mic.location %><br>
+Day: <%= mic.day %><br>
+Time: <%= mic.time %><br>
 </div>
 <% end %>
 </div>
