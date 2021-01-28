@@ -1,11 +1,12 @@
 <div style="margin-left:10%;padding:1px 16px;height:100vh;background-color: #3B6075;color:#C1D4AB;">
+  <div style="width: auto; border: 3px solid black; padding: 30px; display: flex; flex-direction:column;align-items: center; justify-content: center;box-shadow: 0 0.3em 1em #000;margin-top: 20px;">
 <h1><%= @user.stage_name %></h1>
 <!-- add a link to a default image if user hasn't provided a pic -->
-<%= @user.pic %><br>
+<div><%= @user.pic %></div>
 
-<%= @user.bio %><br>
+<div><%= @user.bio %></div>
 
-<% if @user.host == true %>
+<% if @user.host == true && @user.id == @current_user %>
 <%= link_to "Make a Mic", new_open_mic_path %>
 <% end %>
 
@@ -28,4 +29,5 @@
 <% if @user.spotify_link != nil %>
 <%= @user.spotify_link %><br>
 <% end %>
+</div>
 </div>

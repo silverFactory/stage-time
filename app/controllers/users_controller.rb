@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
   def show
       @user = User.find(params[:id])
+      @current_user = session[:user_id]
   end
   def edit
     @user = User.find(params[:id])
