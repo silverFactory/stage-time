@@ -1,13 +1,15 @@
 <div style="margin-left:10%;padding:1px 16px;height:100vh;background-color: #3B6075;color:#C1D4AB;text-align: center;">
+<div style="width: auto;text-align:center; border: 3px solid black; padding: 30px; display: flex;flex-direction:column;align-items: center; justify-content: center;box-shadow: 0 0.3em 1em #000;margin-top: 20px;">
 <h1 style=""><%= @support.title %></h1>
 <p><%= link_to @support.user.stage_name, user_path(@support.user) %> says: <%= @support.body %></p>
-  <div style="display: flex; justify-content:center;align-items:flex-start;" >
-    <div style="flex:1;">
+</div>
+<div style="width: auto; border: 3px solid black; padding: 30px; display: flex;flex-direction:column;align-items: flex-start; justify-content: left;box-shadow: 0 0.3em 1em #000;margin-top: 20px;">
+  <div style="display: flex; flex-direction:column; justify-content:center;align-items:flex-start;margin-left:auto;margin-right:auto;line-height:40px;" >
+
     <%# load all existing comments for this support post %>
     <% @support.comments.each do |com| %>
-    <p><%= link_to com.user.stage_name, user_path(com.user) %>: <%= com.body %></p>
+    <div style="flex:1;"><%= link_to com.user.stage_name, user_path(com.user) %>: <%= com.body %></div>
     <% end %>
-    </div>
     <div style="flex:1;">
     <%= form_with model: @comment do |f| %>
     <%= f.text_area :body, placeholder: "say something...", size: "30x10" %><br>
@@ -16,5 +18,6 @@
     <%= f.submit %>
     <% end %>
     </div>
+  </div>
   </div>
 </div>
