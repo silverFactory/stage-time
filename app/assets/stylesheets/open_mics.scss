@@ -13,3 +13,110 @@ a:hover {
 a:active {
   color: #D85340;
 }
+.bg{
+  margin-left:10%;
+  padding:1px 16px;
+  height:auto;
+  background-color: #3B6075;
+  color:#C1D4AB;
+}
+.title_box{
+  text-align: center;
+  position: relative;
+  height: 350px;
+}
+.title_box img{
+  width:100%;
+  height: 100%;
+  margin-top:5px;
+  box-shadow: 0 0.3em 1.1em 0;
+}
+.title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+  background-image: linear-gradient(70deg, #469F77, #BACF92);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  font-size: 60px;
+  font-family: modak;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+.alert_box{
+  width: auto;
+  border: 3px solid black;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.3em 1em #000;
+  margin-top: 20px;
+}
+.alert_box span{
+  font-size: 18px
+}
+#left_alert{
+  width: 50px;
+  height: 50px;
+  margin-right: 50px;
+}
+#right_alert{
+  width: 50px;
+  height: 50px;
+  margin-left: 50px;
+}
+.supports{
+  display: flex;
+  height: 250px;
+  width: 100%;
+  justify-content: center;
+  margin-top:20px;
+}
+.missed_connections{
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  padding: 10px;
+  min-height: 0;
+  max-width: 170px;
+  overflow: auto;
+  box-shadow: 0 0.3em 1em #000;
+  background-color: #e0e8d8;
+  color: black;
+  margin-left:2px
+}
+.lend_a_hands{
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  padding: 10px;
+  min-height: 0;
+  max-width: 170px;
+  overflow: auto;
+  box-shadow: 0 0.3em 1em #000;
+  background-color: #e0e8d8;
+  color: black;
+  margin-right:2px
+}
+.supports img{
+  min-width: 0;
+  flex-grow: 1;
+  flex-shrink: 3;
+  flex-basis: 50%;
+  margin-left: 5px;
+  margin-right:5px;
+  box-shadow: 0 0.3em 1em #000;
+}
+.info_section{
+  text-align: center;
+  margin: 20px;
+  height:auto;
+  border: 5px double black;
+  box-shadow: 0 0.3em 1em #000;
+}
