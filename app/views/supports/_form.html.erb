@@ -1,17 +1,17 @@
-<div style="margin-left:10%;padding:1px 16px;height:100vh;background-color: #3B6075;color:#C1D4AB;">
-<div style="text-align: center;margin: 20px;height:auto;border: 2px solid black;box-shadow: 0 0.3em 1em #000;">
-<%= form_with model: [:open_mic, support] do |f| %>
-<div style="display: flex;flex-direction:row;justify-content:flex-start;text-align:center;width:400px;line-height:26px; margin-bottom: 5px;">
-<p style="flex: 0 0 200px;"><%= f.label :title %></p>
-<p style="flex: 0 0 auto;"><%= f.text_field :title %></p>
-</div>
-<div style="display: flex;flex-direction:row;justify-content:flex-start;text-align:center;width:400px;line-height:10px; margin-bottom: 5px;">
-<p style="flex: 0 0 200px;"><%= f.label :body %></p>
-<p style="flex: 0 0 200px;"><%= f.text_area :body, size: "30x8" %></p>
-</div>
-<%= f.hidden_field :missed_connection, :value => missed_connection %>
-<%= f.hidden_field :lend_a_hand, :value => lend_a_hand %>
-<p><%= f.submit "Post" %></p>
-<% end %>
-</div>
+<div class="support_container">
+  <div class="support_box">
+  <%= form_with model: [:open_mic, support] do |f| %>
+    <div>
+    <p id="label"><%= f.label :title %></p>
+    <p id="input"><%= f.text_field :title %></p>
+    </div>
+    <div>
+    <p id="label"><%= f.label :body %></p>
+    <p id="input"><%= f.text_area :body, size: "30x8" %></p>
+    </div>
+    <%= f.hidden_field :missed_connection, :value => missed_connection %>
+    <%= f.hidden_field :lend_a_hand, :value => lend_a_hand %>
+    <p><%= f.submit "Post" %></p>
+  <% end %>
+  </div>
 </div>

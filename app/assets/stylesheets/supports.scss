@@ -1,3 +1,31 @@
 // Place all the styles related to the supports controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.support_container{
+  margin-left:10%;
+  padding:1px 16px;
+  height:100vh;
+  background-color: #3B6075;color:#C1D4AB;
+}
+.support_box{
+text-align: center;
+margin: 20px;
+height:auto;
+border: 2px solid black;
+box-shadow: 0 0.3em 1em #000;
+}
+.support_box div{
+display: flex;
+flex-direction:row;
+justify-content:flex-start;
+text-align:center;
+width:400px;
+line-height:26px;
+margin-bottom: 5px;
+}
+#label{
+  flex: 0 0 200px;
+}
+#input{
+  flex: 0 0 auto;
+}
