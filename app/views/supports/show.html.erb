@@ -1,23 +1,22 @@
-<div style="margin-left:10%;padding:1px 16px;height:100vh;background-color: #3B6075;color:#C1D4AB;text-align: center;">
-<div style="width: auto;text-align:center; border: 2px solid black; padding: 30px; display: flex;flex-direction:column;align-items: center; justify-content: center;box-shadow: 0 0.3em 1em #000;margin-top: 20px;">
-<h1 style=""><%= @support.title %></h1>
-<p><%= link_to @support.user.stage_name, user_path(@support.user) %> says: <%= @support.body %></p>
-</div>
-<div style="width: auto; border: 2px solid black; padding: 30px; display: flex;flex-direction:column;align-items: flex-start; justify-content: left;box-shadow: 0 0.3em 1em #000;margin-top: 20px;">
-  <div style="display: flex; flex-direction:column; justify-content:center;align-items:flex-start;margin-left:auto;margin-right:auto;line-height:40px;" >
-
-    <%# load all existing comments for this support post %>
-    <% @support.comments.each do |com| %>
-    <div style="flex:1;"><%= link_to com.user.stage_name, user_path(com.user) %>: <%= com.body %></div>
-    <% end %>
-    <div style="flex:1;">
-    <%= form_with model: @comment do |f| %>
-    <%= f.text_area :body, placeholder: "say something...", size: "30x10" %><br>
-    <%= f.hidden_field :user_id, :value => @support.user_id %>
-    <%= f.hidden_field :support_id, :value => @support.id %>
-    <%= f.submit %>
-    <% end %>
-    </div>
+<div class="support_bg">
+  <div class="banner_box">
+    <h1><%= @support.title %></h1>
+    <p><%= link_to @support.user.stage_name, user_path(@support.user) %> says: <%= @support.body %></p>
   </div>
+  <div class="comments_box">
+    <div>
+      <%# load all existing comments for this support post %>
+      <% @support.comments.each do |com| %>
+      <div class="comment"><%= link_to com.user.stage_name, user_path(com.user) %>: <%= com.body %></div>
+      <% end %>
+      <div class="comment">
+      <%= form_with model: @comment do |f| %>
+      <%= f.text_area :body, placeholder: "say something...", size: "30x10" %><br>
+      <%= f.hidden_field :user_id, :value => @support.user_id %>
+      <%= f.hidden_field :support_id, :value => @support.id %>
+      <%= f.submit %>
+      <% end %>
+      </div>
+    </div>
   </div>
 </div>
