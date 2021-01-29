@@ -1,46 +1,46 @@
-<div style="margin-left:15%;padding:16px 16px;height:auto;background-color: #3B6075;color:#C1D4AB;box-shadow: 0 0.3em 1em #000;">
-  <div style="margin-left: auto;margin-right: auto;width: 60%; text-align: center;">
+<div class="form_bg">
+  <div class="form_container">
     <h1>Create A New Mic</h1>
-    <%= form_for @open_mic do |f| %>
-<div style="display: flex;flex-direction:row;justify-content:center;text-align:center;line-height:26px; margin-bottom: 5px;">
-    <p style="flex: 1 0 100px;"><%= f.label :name %></p>
-    <p style="flex: 1 0 auto;"><%= f.text_field :name %></p>
-</div>
-<div style="display: flex;flex-direction:row;justify-content:center;text-align:center;line-height:26px; margin-bottom: 5px;">
-    <p style="flex: 1 0 100px;"><%= f.label :genre %></p>
-    <p style="flex: 1 0 auto;"><%= f.text_field :genre %></p>
-</div>
-<div style="display: flex;flex-direction:row;justify-content:center;text-align:center;line-height:26px; margin-bottom: 5px;">
-    <p style="flex: 1 0 100px;"><%= f.label :location %></p>
-    <p style="flex: 1 0 auto;"><%= f.text_field :location %></p>
-</div>
-<div style="display: flex;flex-direction:row;justify-content:center;text-align:center;line-height:26px; margin-bottom: 5px;">
-    <p style="flex: 1 0 100px;"><%= f.label :day %></p>
-    <p style="flex: 1 0 auto;"><%= f.text_field :day %></p>
-</div>
-<div style="display: flex;flex-direction:row;justify-content:center;text-align:center;line-height:26px; margin-bottom: 5px;">
-    <p style="flex: 1 0 100px;"><%= f.label :time %></p>
-    <p style="flex: 1 0 auto;"><%= f.text_field :time %></p>
-</div>
-<div style="display: flex;flex-direction:row;justify-content:center;text-align:center;line-height:26px; margin-bottom: 5px;">
-    <p style="flex: 1 0 100px;"><%= f.label :stage_time %></p>
-    <p style="flex: 1 0 auto;"><%= f.text_field :stage_time %></p>
-</div>
-<div style="display: flex;flex-direction:row;justify-content:center;text-align:center;line-height:26px; margin-bottom: 5px;">
-    <p style="flex: 1 0 100px;"><%= f.label :sign_up_protocol %></p>
-    <p style="flex: 1 0 auto;"><%= f.text_field :sign_up_protocol %></p>
-</div>
-<div style="display: flex;flex-direction:row;justify-content:center;text-align:center;line-height:26px; margin-bottom: 5px;">
-    <p style="flex: 1 0 100px;"><%= f.label :cover %></p>
-    <p style="flex: 1 0 auto;"><%= f.number_field :cover %></p>
-</div>
-<div style="display: flex;flex-direction:row;justify-content:center;text-align:center;line-height:26px; margin-bottom: 5px;">
-    <p style="flex: 1 0 100px;"><%= f.label :drink_or_food_minimum %></p>
-    <p style="flex: 1 0 auto;"><%= f.text_field :drink_or_food_minimum %></p>
-</div>
-<div style="margin-left: auto;margin-right: auto; width: 8em">
-    <%= f.submit %>
-</div>
-    <% end %>
+        <%= form_for @open_mic do |f| %>
+    <div>
+        <p class="label"><%= f.label :name %></p>
+        <p class="input"><%= f.text_field :name %></p>
+    </div>
+    <div>
+        <p class="label"><%= f.label :genre %></p>
+        <p class="input"><%= f.text_field :genre %></p>
+    </div>
+    <div>
+        <p class="label"><%= f.label :location %></p>
+        <p class="input"><%= f.text_field :location %></p>
+    </div>
+    <div>
+        <p class="label"><%= f.label :day %></p>
+        <p class="input"><%= f.text_field :day %></p>
+    </div>
+    <div>
+        <p class="label"><%= f.label :time %></p>
+        <p class="input"><%= f.text_field :time %></p>
+    </div>
+    <div>
+        <p class="label"><%= f.label :stage_time %></p>
+        <p class="input"><%= f.text_field :stage_time %></p>
+    </div>
+    <div>
+        <p class="label"><%= f.label :sign_up_protocol %></p>
+        <p class="input"><%= f.text_field :sign_up_protocol %></p>
+    </div>
+    <div>
+        <p class="label"><%= f.label :cover %></p>
+        <p class="input"><%= f.number_field :cover %></p>
+    </div>
+    <div>
+        <p class="label"><%= f.label :drink_or_food_minimum %></p>
+        <p class="input"><%= f.text_field :drink_or_food_minimum %></p>
+    </div>
+    <div id="submit">
+        <%= f.submit %>
+    </div>
+        <% end %>
   </div>
 </div>
