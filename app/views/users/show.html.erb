@@ -1,15 +1,16 @@
-<div style="margin-left:10%;padding:1px 16px;height:100vh;background-color: #3B6075;color:#C1D4AB;">
-  <div style="width: auto;height: 25%; border: 3px solid black; padding: 30px;align-items: center; justify-content: center;box-shadow: 0 0.3em 1em #000;margin-top: 20px;">
-<h1 style="border: 4px double #C1D4AB;padding: 5px;float:right;margin-right: auto;margin-left: auto;width: 40%;text-align: center;"><%= @user.stage_name %></h1>
-<!-- add a link to a default image if user hasn't provided a pic -->
-  <div style="flex:1 1 auto;" >
-  <img src="<%= @user.pic %>" alt="profile pic" style="min-width:0;max-width:50%">
-  </div>
-</div>
-<div style="width: auto; border: 3px solid black; padding: 30px;align-items: center; justify-content: center;box-shadow: 0 0.3em 1em #000;margin-top: 20px;">
-<h1 style="border-bottom: 1px solid #C1D4AB;padding: 5px;margin-right: auto;margin-left: auto;width: 40%;text-align: center;">About</h1>
+<div class="background">
+  <div class="name_box">
 
-<div style="line-height: 25px;"><%= @user.bio %></div>
+<!-- add a link to a default image if user hasn't provided a pic -->
+  <div class="img_box" >
+  <img src="<%= @user.pic %>" alt="profile pic">
+  </div>
+  <h1 id="stage_name"><%= @user.stage_name %></h1>
+</div>
+<div class="about_box">
+<h1>About</h1>
+
+<div><%= @user.bio %></div>
 
 <% if @user.host == true && @user.id == @current_user %>
 <%= link_to "Make a Mic", new_open_mic_path %>
@@ -17,7 +18,7 @@
 
 <%# TOO MUCH LOGIC IN VIEW, ABSTRACT TO AN ARRAY IN THE CONTROLLER %>
 <% if @user.email_public == true %>
-<div style="line-height: 25px;"><%= @user.email %></div>
+<div><%= @user.email %></div>
 <% end %>
 <% if @user.facebook_link != nil %>
 <%= @user.facebook_link %><br>
