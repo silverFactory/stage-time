@@ -1,5 +1,11 @@
-<%= form_for @update do |f| %>
-<%= f.label :body %>
-<%= f.text_area :body %>
-<%= f.submit %>
-<% end %>
+<div class="form_box">
+  <div class="form_container">
+  <%= form_with model: [:open_mic, @update] do |f| %>
+    <div class="input_container">
+    <p class="label"><%= f.label :body, "Update" %></p>
+    <p class="input"><%= f.text_area :body, size:"30x3" %></p>
+    </div>
+    <div><%= f.submit %></div>
+    <% end %>
+  </div>
+</div>
