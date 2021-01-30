@@ -1,3 +1,10 @@
+<% if @support.errors.any? %>
+<div class="form_box">
+  <% @support.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <% end %>
+</div>
+<% end %>
 <div class="support_container">
   <div class="support_box">
   <%= form_with model: [:open_mic, support] do |f| %>
