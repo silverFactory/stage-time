@@ -3,6 +3,13 @@
     <h1><%= @support.title %></h1>
     <p><%= link_to @support.user.stage_name, user_path(@support.user) %> says: <%= @support.body %></p>
   </div>
+  <% if @comment.errors.any? %>
+  <div class="banner_box">
+      <% @comment.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+  </div>
+  <% end %>
   <div class="comments_box">
     <div>
       <%# load all existing comments for this support post %>
