@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
-  validates :password, presence: true
-  validates :password, confirmation: { case_sensitive: true }
+  # validates :password, presence: true
+  # validates :password, confirmation: { case_sensitive: true }
   validates :username, uniqueness: true
   validates :stage_name, presence: true
   validates :bio, length: {minimum: 40, too_short: "%{count} characters is too short. Tell us a little more about yourself!"}

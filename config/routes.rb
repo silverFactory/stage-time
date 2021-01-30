@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy'
   get '/open_mics/:open_mic_id/missed_connections/new' => 'supports#new_missed_connection'
   get '/open_mics/:open_mic_id/lend_a_hands/new' => 'supports#new_lend_a_hand'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  match '/auth/facebook/callback' => 'sessions#create', via: [:get, :post]
 end

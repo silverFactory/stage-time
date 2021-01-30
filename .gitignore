@@ -29,6 +29,9 @@
 /public/assets
 .byebug_history
 
+# Ignore Omniauth credentials
+.env
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
