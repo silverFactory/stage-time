@@ -1,3 +1,30 @@
 // Place all the styles related to the instruments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.form_bg{
+  margin-left:15%;
+  padding:16px 16px;
+  height:auto;
+  background-color: #3B6075;
+  color:#C1D4AB;
+  box-shadow: 0 0.3em 1em #000;
+}
+.form_container{
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  text-align: center;
+}
+.form_container div{
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+  text-align:center;
+  line-height:26px;
+  margin-bottom: 5px;
+}
+#submit{
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em;
+}

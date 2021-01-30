@@ -5,8 +5,12 @@ class InstrumentsController < ApplicationController
   def create
     @instrument = Instrument.new(instrument_params)
     @instrument.open_mic_id = params[:open_mic_id]
-    @instrument.save
-    redirect_to open_mic_instrument_path(params[:open_mic_id], @instrument)
+    if @instrument.valid?
+      @instrument.save
+      redirect_to open_mic_instrument_path(params[:open_mic_id], @instrument)
+    else
+      render :new
+    end 
   end
   def show
     @instrument = Instrument.find(params[:id])
