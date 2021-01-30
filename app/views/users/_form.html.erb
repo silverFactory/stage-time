@@ -1,15 +1,9 @@
-<div class="form_box">
-<div class="form_container">
-<h1 class="">Sign Up</h1>
-</div>
-</div>
 <% if @user.errors.any? %>
 <div class="form_box">
-
     <div id="error_explanation">
       <h2>
         <%= pluralize(@user.errors.count, "error") %>
-        prohibited this article from being saved:
+        prohibited this account from being saved:
       </h2>
       <% @user.errors.full_messages.each do |msg| %>
         <p><%= msg %></p>

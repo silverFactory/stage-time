@@ -1,16 +1,17 @@
 class OpenMicsController < ApplicationController
   def new
-      #  raise params.inspect
     @open_mic = OpenMic.new
   end
   def create
     @open_mic = OpenMic.new(open_mic_params)
-    @open_mic.save
-    #add host to mic association
-    @host = Host.create(user_id: session[:user_id], open_mic_id: @open_mic.id)
-  #  byebug
-
-    redirect_to open_mic_path(@open_mic)
+    if @open_mic.valid?
+      @open_mic.save
+      #add host to mic association
+      @host = Host.create(user_id: session[:user_id], open_mic_id: @open_mic.id)
+      redirect_to open_mic_path(@open_mic)
+    else
+      render :new
+    end
   end
   def index
     @open_mics = OpenMic.all
