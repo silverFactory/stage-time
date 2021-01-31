@@ -19,4 +19,11 @@ class OpenMic < ApplicationRecord
   has_many :users, through: :supports
   has_many :users, through: :updates
 
+  def host_names
+    @host_names = []
+    self.hosts.each do |host|
+      @host_names << User.find(host.id).stage_name
+    end
+    @host_names
+  end
 end

@@ -17,7 +17,7 @@
         <li><%= link_to "Log Out", signout_path %></li>
         <li><%= link_to "Edit Your Profile", edit_user_path(session[:user_id]) %></li>
         <% if User.find(session[:user_id]).host == true %>
-            <li><%= link_to "Host a Mic", new_open_mic_path %></li>        
+            <li><%= link_to "Host a Mic", new_open_mic_path %></li>
         <% end %>
       <% else %>
         <li><%= link_to "Log In", signin_path %></li>

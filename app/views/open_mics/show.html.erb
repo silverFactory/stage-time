@@ -20,7 +20,7 @@
 <div class="supports">
   <div class="missed_connections">
   <p><%= link_to "Missed Connections:", "/open_mics/#{@open_mic.id}/missed_connections/new" %></p>
-  <% @missed_connections.each do |con| %>
+  <% @open_mic.supports.missed_connection.each do |con| %>
   <p><%= link_to con.title, open_mic_support_path(@open_mic, con) %></p>
   <% end %>
   <p>more posts</p>
@@ -34,7 +34,7 @@
   <img src="https://c.stocksy.com/a/IBQ200/z9/577300.jpg" alt="microphone on stand">
   <div class="lend_a_hands">
   <p><%= link_to "Help Me Out This Week:", "/open_mics/#{@open_mic.id}/lend_a_hands/new" %></p>
-  <% @lend_a_hands.each do |hand| %>
+  <% @open_mic.supports.lend_a_hand.each do |hand| %>
   <p><%= link_to hand.title, open_mic_support_path(@open_mic, hand) %></p>
   <% end %>
   <p>more posts</p>
@@ -47,7 +47,7 @@
   </div>
 </div>
   <div class="info_section">
-    <h2 style="">Hosted by: <% @hosts.each do |host| %>
+    <h2>Hosted by: <% @open_mic.host_names.each do |host| %>
       <%= host %>
     <% end %> </h2>
 
