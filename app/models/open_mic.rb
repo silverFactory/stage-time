@@ -26,4 +26,7 @@ class OpenMic < ApplicationRecord
     end
     @host_names
   end
+  def host?(user_id)
+    self.hosts.ids.include?(user_id)
+  end
 end

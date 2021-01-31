@@ -4,7 +4,7 @@
   <img src="https://themusicbureau.com/wp-content/uploads/2018/03/background-2011744_1920.jpg" alt="stage">
   <div class="title"><%= @open_mic.name %></div>
   </div>
-  <% if @open_mic.hosts.ids.include?(session[:user_id]) %>
+  <% if @open_mic.host?(session[:user_id]) %>
   <div class="info_section">
     <p><%= link_to "Post A New Update", new_open_mic_update_path(@open_mic) %></p>
     <p><%= link_to "Edit This Mic", edit_open_mic_path(@open_mic) %></p>
@@ -59,7 +59,7 @@
     <p>Sign Up Protocol: <%= @open_mic.sign_up_protocol %></p>
     <p>Cover: <%= @open_mic.cover %></p>
     <p>Drink or Food Minimum: <%= @open_mic.drink_or_food_minimum %></p>
-    <% if @open_mic.hosts.ids.include?(session[:user_id])  %>
+    <% if @open_mic.host?(session[:user_id])  %>
       <p><%= link_to "Add/Edit Instruments", open_mic_instruments_path(@open_mic) %></p>
     <% end %>
     <% if @open_mic.instruments != [] %>

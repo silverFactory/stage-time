@@ -6,7 +6,6 @@ class OpenMicsController < ApplicationController
     @open_mic = OpenMic.new(open_mic_params)
     if @open_mic.valid?
       @open_mic.save
-      #add host to mic association
       @host = Host.create(user_id: session[:user_id], open_mic_id: @open_mic.id)
       redirect_to open_mic_path(@open_mic)
     else
