@@ -4,9 +4,12 @@
   <img src="https://themusicbureau.com/wp-content/uploads/2018/03/background-2011744_1920.jpg" alt="stage">
   <div class="title"><%= @open_mic.name %></div>
   </div>
+  <% if @open_mic.hosts.ids.include?(session[:user_id]) %>
   <div class="info_section">
     <p><%= link_to "Post A New Update", new_open_mic_update_path(@open_mic) %></p>
+    <p><%= link_to "Edit This Mic", edit_open_mic_path(@open_mic) %></p>
   </div>
+  <% end %>
   <% if @update != nil %>
   <div class="alert_box">
   <img src="https://findicons.com/files/icons/986/aeon/256/alert.png" alt="alert icon" id="left_alert">
