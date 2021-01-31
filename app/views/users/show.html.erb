@@ -1,9 +1,12 @@
 <div class="background">
   <div class="name_box">
-
-<!-- add a link to a default image if user hasn't provided a pic -->
   <div class="img_box" >
+  <% if @user.pic == "" %>
+  <!-- default image if user hasn't provided a pic -->
+  <img src="https://images.megapixl.com/5422/54228269.jpg" alt="profile pic">
+  <% else %>
   <img src="<%= @user.pic %>" alt="profile pic">
+  <% end %>
   </div>
   <h1 id="stage_name"><%= @user.stage_name %></h1>
 </div>
