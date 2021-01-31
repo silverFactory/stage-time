@@ -1,0 +1,14 @@
+<div class="index_container">
+  <div class="index_box">
+    <%= link_to "Add Instrument", new_open_mic_instrument_path(@open_mic) %>
+  </div>
+  <div class="index_box">
+  </div>
+  <% @instruments.each do |inst| %>
+  <div class="index_box">
+  <%= link_to inst.name, edit_open_mic_instrument_path(@open_mic, inst) %><br>
+  <p>Description: <%= inst.description %></p>
+  <p>Status: <%= inst.status %></p>
+  </div>
+  <% end %>
+</div>
