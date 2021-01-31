@@ -29,7 +29,6 @@ class OpenMicsController < ApplicationController
         @missed_connections << support
       end
     end
-    #should filter out those posts made for shows that already happened
     @lend_a_hands = []
     @open_mic.supports.each do |support|
       if support.lend_a_hand == true

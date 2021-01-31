@@ -53,11 +53,16 @@
     <p>Sign Up Protocol: <%= @open_mic.sign_up_protocol %></p>
     <p>Cover: <%= @open_mic.cover %></p>
     <p>Drink or Food Minimum: <%= @open_mic.drink_or_food_minimum %></p>
+    <% if @open_mic.hosts.ids.include?(session[:user_id])  %>
+      <p><%= link_to "Add a new instrument", new_open_mic_instrument_path(@open_mic) %></p>
+    <% end %>
+    <% if @open_mic.instruments != [] %>
     <p>Instruments available for use: </p>
     <% @open_mic.instruments.each do |inst| %>
     <p>Name: <%= inst.name %></p>
     <p>Description: <%= inst.description %></p>
     <p>Status: <%= inst.status %></p>
+    <% end %>
     <% end %>
   </div>
 </div>
