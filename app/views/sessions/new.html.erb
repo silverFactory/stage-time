@@ -1,12 +1,15 @@
-<div class="log_in_container">
-
-<% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
+<div class="form_box">
+  <div class="form_container">
+    <h1>Sign In</h1>
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
+<div class="log_in_container">
   <div class="log_in_box">
-
     <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
     <div>
     <p id="label">  <%= label_tag :username, "Username: " %></p>

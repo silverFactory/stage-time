@@ -2,13 +2,17 @@ class CommentsController < ApplicationController
   def new
   end
   def create
-    @comment = Comment.new(comment_params)
-    if @comment.valid?
-      @comment.save
-      redirect_to open_mic_support_path(@comment.support.open_mic_id, @comment.support_id)
+    if session[:user_id] == nil
+      redirect_to signin_path, notice: "Must be logged in to use this feature"
     else
-      @support = Support.find(@comment.support_id)
-      render "supports/show"
+      @comment = Comment.new(comment_params)
+      if @comment.valid?
+        @comment.save
+        redirect_to open_mic_support_path(@comment.support.open_mic_id, @comment.support_id)
+      else
+        @support = Support.find(@comment.support_id)
+        render "supports/show"
+      end
     end
   end
   def edit

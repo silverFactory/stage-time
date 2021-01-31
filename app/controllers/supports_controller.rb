@@ -3,18 +3,26 @@ class SupportsController < ApplicationController
     @support = Support.new
   end
   def new_missed_connection
-    @support = Support.new
-    @missed_connection = true
-    @lend_a_hand = false
-    @title = "Post a Missed Connection"
-    render "new"
+    if session[:user_id] == nil
+      redirect_to signin_path, notice: "Must be logged in to use this feature"
+    else
+      @support = Support.new
+      @missed_connection = true
+      @lend_a_hand = false
+      @title = "Post a Missed Connection"
+      render "new"
+    end
   end
   def new_lend_a_hand
-    @support = Support.new
-    @lend_a_hand = true
-    @missed_connection = false
-    @title = "Ask For Help This Week"
-    render "new"
+    if session[:user_id] == nil
+      redirect_to signin_path, notice: "Must be logged in to use this feature"
+    else
+      @support = Support.new
+      @lend_a_hand = true
+      @missed_connection = false
+      @title = "Ask For Help This Week"
+      render "new"
+    end
   end
   def create
     @support = Support.new(support_params)
