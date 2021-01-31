@@ -5,16 +5,16 @@
   <% end %>
 </div>
 <% end %>
-<div class="support_container">
-  <div class="support_box">
+<div class="form_container">
+  <div class="form_box">
   <%= form_with model: [:open_mic, support] do |f| %>
     <div>
-    <p id="label"><%= f.label :title %></p>
-    <p id="input"><%= f.text_field :title %></p>
+    <p class="label"><%= f.label :title %></p>
+    <p class="input"><%= f.text_field :title, size: "30" %></p>
     </div>
     <div>
-    <p id="label"><%= f.label :body %></p>
-    <p id="input"><%= f.text_area :body, size: "30x8" %></p>
+    <p class="label"><%= f.label :body %></p>
+    <p class="input"><%= f.text_area :body, size: "25x8" %></p>
     </div>
     <%= f.hidden_field :missed_connection, :value => missed_connection %>
     <%= f.hidden_field :lend_a_hand, :value => lend_a_hand %>
