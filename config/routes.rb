@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy'
   get '/open_mics/:open_mic_id/missed_connections/new' => 'supports#new_missed_connection'
   get '/open_mics/:open_mic_id/lend_a_hands/new' => 'supports#new_lend_a_hand'
-  match '/auth/facebook/callback' => 'sessions#create', via: [:get, :post]
-  # get 'auth/facebook', as: 'facebook_login' 
+  match '/auth/:provider/callback' => 'sessions#create', via: [:get, :post]
+  # get 'auth/facebook', as: 'facebook_login'
 end
