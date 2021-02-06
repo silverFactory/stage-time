@@ -9,7 +9,7 @@ User.create(
   email_public: true,
   facebook_link: "",
   instagram_link: "",
-  youtube_link: "youtube.com/gbelcher",
+  youtube_link: "https://youtube.com/gbelcher",
   bandcamp_link: "",
   spotify_link: ""
 )
@@ -37,11 +37,11 @@ User.create(
   bio: "Been in the village since the '70's. Do a little bit of this and that. A mainstay in the scene.",
   email: "bt@gmail.com",
   email_public: true,
-  facebook_link: "facebook.com/bigtoddtohot",
-  instagram_link: "instagram.com/bigtoddishere",
+  facebook_link: "https://facebook.com/bigtoddtohot",
+  instagram_link: "https://instagram.com/bigtoddishere",
   youtube_link: "",
   bandcamp_link: "",
-  spotify_link: "spotify.com/btjokes"
+  spotify_link: "https://spotify.com/btjokes"
 )
 User.create(
   username: "jazzman",
@@ -56,7 +56,7 @@ User.create(
   instagram_link: "",
   youtube_link: "",
   bandcamp_link: "",
-  spotify_link: "spotify.com/billykeys"
+  spotify_link: "https://spotify.com/billykeys"
 )
 User.create(
   username: "zazzblammymatazz",
@@ -68,7 +68,7 @@ User.create(
   email: "zazzblam@gmail.com",
   email_public: true,
   facebook_link: "",
-  instagram_link: "instagram.com/pinkyzazz",
+  instagram_link: "https://instagram.com/pinkyzazz",
   youtube_link: "",
   bandcamp_link: "",
   spotify_link: ""

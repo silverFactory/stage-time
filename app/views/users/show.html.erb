@@ -14,24 +14,23 @@
 <h1>About</h1>
 <div><%= @user.bio %></div>
 
-<%# TOO MUCH LOGIC IN VIEW, ABSTRACT TO AN ARRAY IN THE CONTROLLER %>
 <% if @user.email_public == true %>
-<div><%= @user.email %></div>
+<div>Email: <%= @user.email %></div>
 <% end %>
-<% if @user.facebook_link != nil %>
-<%= @user.facebook_link %><br>
+<% if @user.facebook_link != "" %>
+<a href="<%= @user.facebook_link %>" ><%= @user.facebook_link %></a><br>
 <% end %>
-<% if @user.instagram_link != nil %>
-<%= @user.instagram_link %><br>
+<% if @user.instagram_link != "" %>
+<a href="<%= @user.instagram_link %>" ><%= @user.instagram_link %></a><br>
 <% end %>
-<% if @user.youtube_link != nil %>
-<%= @user.youtube_link %><br>
+<% if @user.youtube_link != "" %>
+<a href="<%= @user.youtube_link %>" ><%= @user.youtube_link %></a><br>
 <% end %>
-<% if @user.bandcamp_link != nil %>
-<%= @user.bandcamp_link %><br>
+<% if @user.bandcamp_link != "" %>
+<a href="<%= @user.bandcamp_link %>" ><%= @user.bandcamp_link %></a><br>
 <% end %>
-<% if @user.spotify_link != nil %>
-<%= @user.spotify_link %><br>
+<% if @user.spotify_link != "" %>
+<a href="<%= @user.spotify_link %>" ><%= @user.spotify_link %></a><br>
 <% end %>
 </div>
 </div>
