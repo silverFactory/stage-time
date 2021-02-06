@@ -27,6 +27,12 @@ class OpenMic < ApplicationRecord
     @host_names
   end
   def host?(user_id)
-    self.hosts.ids.include?(user_id)
+    is_host = false
+    self.hosts.each do |host|
+      if host.user_id == user_id
+        is_host = true
+      end
+    end
+    is_host
   end
 end
