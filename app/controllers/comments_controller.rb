@@ -15,12 +15,6 @@ class CommentsController < ApplicationController
       end
     end
   end
-  def edit
-  end
-  def update
-  end
-  def destroy
-  end
 
   private
 

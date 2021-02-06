@@ -44,12 +44,6 @@ class SupportsController < ApplicationController
     @support = Support.find(params[:id])
     @comment = Comment.new
   end
-  def edit
-  end
-  def update
-  end
-  def destroy
-  end
 
   private
 
