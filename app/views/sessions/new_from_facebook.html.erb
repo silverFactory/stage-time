@@ -1,0 +1,59 @@
+<div class="form_box">
+  <div class="form_container">
+    <h1>Share A Little More About Yourself</h1>
+  </div>
+</div>
+
+<div class="form_box">
+  <div class="form_container">
+    <%= form_for @user do |f| %>
+    <%= f.hidden_field :password, :value => @random_pass %>
+    <%= f.hidden_field :password_confirmation, :value => @random_pass %>
+    <div class="input_container">
+    <p class="label"><%=f.label :stage_name, "Stage Name" %></p>
+    <p class="input"><%=f.text_field :stage_name %></p>
+    </div>
+    <div class="input_container">
+    <p class="label"><%=f.label :pic, "Link for profile pic" %></p>
+    <p class="input"><%=f.text_field :pic %></p>
+    </div>
+    <div class="input_container" style="padding-left: 25px;">
+    <p class="label"><%=f.label :bio %></p>
+    <p class="input"><%=f.text_area :bio, size: "25x8" %></p>
+    </div>
+    <div class="input_container">
+    <p class="label"><%=f.label :email %></p>
+    <p class="input"><%=f.text_field :email %></p>
+    </div>
+    <div class="input_container">
+    <p class="label"><%=f.label :email_public, "Would you like your email to be public?" %></p>
+    <p class="input"><%=f.check_box :email_public %></p>
+    </div>
+    <div class="input_container">
+    <p class="label"><%=f.label :facebook_link %></p>
+    <p class="input"><%=f.text_field :facebook_link %></p>
+    </div>
+    <div class="input_container">
+    <p class="label"><%=f.label :instagram_link %></p>
+    <p class="input"><%=f.text_field :instagram_link %></p>
+    </div>
+    <div class="input_container">
+    <p class="label"><%=f.label :youtube_link %></p>
+    <p class="input"><%=f.text_field :youtube_link %></p>
+    </div>
+    <div class="input_container">
+    <p class="label"><%=f.label :bandcamp_link %></p>
+    <p class="input"><%=f.text_field :bandcamp_link %></p>
+    </div>
+    <div class="input_container">
+    <p class="label"><%=f.label :spotify_link %></p>
+    <p class="input"><%=f.text_field :spotify_link %></p>
+    </div>
+    <div class="input_container">
+    <p class="label"><%=f.label :host, "Do you host an open mic?" %></p>
+    <p class="input"><%=f.check_box :host %></p>
+    </div>
+    <%= f.submit %>
+    <% end %>
+  </div>
+</div>
