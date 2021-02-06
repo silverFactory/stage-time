@@ -27,8 +27,6 @@ class InstrumentsController < ApplicationController
     @instrument.update(instrument_params)
     redirect_to open_mic_instrument_path(params[:open_mic_id], @instrument)
   end
-  def destroy
-  end
 
   private
 

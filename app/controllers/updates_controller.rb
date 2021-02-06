@@ -8,12 +8,6 @@ class UpdatesController < ApplicationController
     @update.save
     redirect_to open_mic_path(params[:open_mic_id])
   end
-  def edit
-  end
-  def update
-  end
-  def destroy
-  end
 
   private
 

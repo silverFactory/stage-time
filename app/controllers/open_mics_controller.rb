@@ -27,8 +27,6 @@ class OpenMicsController < ApplicationController
     @open_mic.update(open_mic_params)
     redirect_to open_mic_path(@open_mic)
   end
-  def destroy
-  end
 
   private
 
