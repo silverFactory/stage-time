@@ -13,7 +13,12 @@ class OpenMicsController < ApplicationController
     end
   end
   def index
+  #raise params.inspect
+  if params[:genre] != nil
+    @open_mics = OpenMic.where('genre LIKE ?', "%#{params[:genre]}%")
+  else
     @open_mics = OpenMic.all
+  end
   end
   def show
     @open_mic = OpenMic.find(params[:id])

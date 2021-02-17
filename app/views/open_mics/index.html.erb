@@ -1,11 +1,15 @@
 <div class="index_container">
+  <%= form_tag open_mics_path, method: :get do %>
+  <%= text_field_tag :genre %>
+  <%= submit_tag %>
+  <% end %>
   <% @open_mics.each do |mic| %>
   <div class="index_box">
   <%= link_to mic.name, open_mic_path(mic) %><br>
   Genre: <%= mic.genre %><br>
   Location: <%= mic.location %><br>
   Day: <%= mic.day %><br>
-  Time: <%= mic.time %><br> 
+  Time: <%= mic.time %><br>
   </div>
   <% end %>
 </div>
